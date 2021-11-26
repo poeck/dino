@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace DinoGame
 {
-    class Plant
+    class Obstacle
     {
 
         public int x;
@@ -17,20 +17,31 @@ namespace DinoGame
 
         public bool IsDeleted = false;
 
-        public string Model = "|";
+        // To check if the obstacle already incremented the score
+        public bool HasIncrementedScore = false;
+
+        public int WIDTH = 2;
+        public int HEIGHT = 2;
+
+        public string Model = "▒";
 
         private Timer timer;
 
-        public Plant(int WINDOW_WIDTH, int WINDOW_HEIGHT, int TICK_SPEED)
+        public Obstacle(int WINDOW_WIDTH, int WINDOW_HEIGHT, int TICK_SPEED)
         {
+            Random r = new Random();
+            WIDTH = r.Next(1, 4);
+            HEIGHT = r.Next(1, 4);
 
             x = WINDOW_WIDTH - 1 - 1;
-            y = 14;
+            y = 15 - HEIGHT;
             timer = new Timer
             (this.Move,
                null,
                0,
                TICK_SPEED);
+
+            
         }
 
         private void Move(object state)

@@ -12,10 +12,10 @@ namespace DinoGame
         {
             Console.WriteLine(@"
 
-                   ___  _         
-                  / _ \(_)__  ___ 
-                 / // / / _ \/ _ \
-                /____/_/_//_/\___/
+                   ___  _                        O 
+                  / _ \(_)__  ___               /I\
+                 / // / / _ \/ _ \               |
+                /____/_/_//_/\___/              / \
 
                 - Simon Koeck -
           (https://github.com/simonkoeck)
@@ -30,11 +30,13 @@ namespace DinoGame
             /** Wait for Key-Press */
             Console.ReadKey();
 
-            Game game = new Game();
-            game.Init();
-
-            /** Stop Game */
-            Console.ReadKey();
+            while (true)
+            {
+                Game game = new Game();
+                    game.Init();
+                
+            }
+    
         }
     }
 }
