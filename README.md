@@ -1,3 +1,3 @@
 # Dino
 
-Jump'n Run in your terminal
+Jump 'n' Run in your terminal
